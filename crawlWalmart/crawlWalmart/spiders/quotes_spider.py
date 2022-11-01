@@ -99,5 +99,12 @@ class QuotesSpider(scrapy.Spider):
         # submit
         driver.find_element(By.CLASS_NAME, "css-vfxkzw ").click()
 
+        # go to Account Setting
+        driver.find_element(By.CLASS_NAME, 'css-1xh2uh0').click()
+
+        # go to Order history
+        driver.find_element(By.CLASS_NAME, 'e1p2iyht1').click()
+
+        yield driver.get('https://www.walmart.ca/api/order-history-page/communication-preferences/address?filter=shipTo')
         time.sleep(10)
         driver.quit()
